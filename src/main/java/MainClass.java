@@ -3,7 +3,6 @@ import calculations.CalculationsImpl;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.Scanner;
 
 public class MainClass {
@@ -19,10 +18,10 @@ public class MainClass {
             System.out.println("What do you want to calculate?");
             System.out.println("1. Decimal to Binary");
             System.out.println("2. IP Decimal to Binary");
-            Integer modus = Integer.valueOf(scanner.nextLine());
-            switch (modus){
-                case 1: decimalToBinary(); break;
-                case 2: ipDecimalToBinary(); break;
+            int modus = Integer.parseInt(scanner.nextLine());
+            switch (modus) {
+                case 1 -> decimalToBinary();
+                case 2 -> ipDecimalToBinary();
             }
             System.out.println("Do you want to repeat? y/n");
             String repeat = scanner.nextLine();

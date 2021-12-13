@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class DecimalToBinary {
 
@@ -41,12 +42,14 @@ public class DecimalToBinary {
     public String ipCalculation(String ip){
         System.out.println("IP: "+ip);
         String[] splitIp = ip.split("\\.");
-        System.out.println(splitIp.length);
+        Stream<String> ipParts = Arrays.stream(splitIp);
         ArrayList<String> binaryList = new ArrayList<>();
-        for(int i = 0; i < 4; i++){
-            System.out.println("SplitIp: "+splitIp[i]);
-            binaryList.add(ipCalculationPart(Integer.valueOf(splitIp[i])));
-        }
+
+        ipParts.forEach(ipPart -> {
+            System.out.println("SplitIp: "+ipPart);
+            binaryList.add(ipCalculationPart(Integer.valueOf(ipPart)));
+        });
+
         return binaryList.toString();
     }
 
