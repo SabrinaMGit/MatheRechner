@@ -54,10 +54,10 @@ public class MainClass {
     private static void ipDecimalToBinary() {
         CalculationsImpl calculations = new CalculationsImpl();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Enter a decimal number:");
+        System.out.print("Enter a IPv4 address (e.g. 121.69.186.253):");
         try {
-            Integer decimal = Integer.parseInt(br.readLine());
-            String binarySum = calculations.ipDecimalToBinary(decimal);
+            String ip = br.readLine();
+            String binarySum = calculations.ipDecimalToBinary(ip);
             System.out.println("Binary : "+binarySum);
         } catch(NumberFormatException | IOException nfe) {
             System.err.println("Invalid Format!");

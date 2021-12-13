@@ -38,7 +38,19 @@ public class DecimalToBinary {
         return binaryList.toString();
     }
 
-    public String ipCalculation(Integer decimal){
+    public String ipCalculation(String ip){
+        System.out.println("IP: "+ip);
+        String[] splitIp = ip.split("\\.");
+        System.out.println(splitIp.length);
+        ArrayList<String> binaryList = new ArrayList<>();
+        for(int i = 0; i < 4; i++){
+            System.out.println("SplitIp: "+splitIp[i]);
+            binaryList.add(ipCalculationPart(Integer.valueOf(splitIp[i])));
+        }
+        return binaryList.toString();
+    }
+
+    public String ipCalculationPart(Integer decimal){
         this.startValue = decimal;
         List<Integer> list = Arrays.asList(128, 64, 32, 16, 8, 4, 2, 1);
         ArrayList<Integer> binaryList = new ArrayList<>();

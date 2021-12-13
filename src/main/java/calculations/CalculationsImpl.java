@@ -9,9 +9,9 @@ public class CalculationsImpl implements Calculations{
     }
 
     @Override
-    public String ipDecimalToBinary(Integer decimal) {
+    public String ipDecimalToBinary(String ip) {
         DecimalToBinary decimalToBinary = new DecimalToBinary();
-        return decimalToBinary.ipCalculation(decimal);
+        return decimalToBinary.ipCalculation(ip);
     }
 
     @Override
