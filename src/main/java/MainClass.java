@@ -13,11 +13,18 @@ public class MainClass {
 
     public static void main ( String [] arguments )
     {
+        Scanner scanner = new Scanner(System.in);
         int exitCode = 0;
         while(exitCode != 1){
-            decimalToBinary();
+            System.out.println("What do you want to calculate?");
+            System.out.println("1. Decimal to Binary");
+            System.out.println("2. IP Decimal to Binary");
+            Integer modus = Integer.valueOf(scanner.nextLine());
+            switch (modus){
+                case 1: decimalToBinary(); break;
+                case 2: ipDecimalToBinary(); break;
+            }
             System.out.println("Do you want to repeat? y/n");
-            Scanner scanner = new Scanner(System.in);
             String repeat = scanner.nextLine();
             exitCode = repeatYesOrNo(repeat);
         }
@@ -38,6 +45,19 @@ public class MainClass {
         try {
             Integer decimal = Integer.parseInt(br.readLine());
             String binarySum = calculations.decimalToBinary(decimal);
+            System.out.println("Binary : "+binarySum);
+        } catch(NumberFormatException | IOException nfe) {
+            System.err.println("Invalid Format!");
+        }
+    }
+
+    private static void ipDecimalToBinary() {
+        CalculationsImpl calculations = new CalculationsImpl();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter a decimal number:");
+        try {
+            Integer decimal = Integer.parseInt(br.readLine());
+            String binarySum = calculations.ipDecimalToBinary(decimal);
             System.out.println("Binary : "+binarySum);
         } catch(NumberFormatException | IOException nfe) {
             System.err.println("Invalid Format!");
