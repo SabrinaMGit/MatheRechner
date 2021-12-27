@@ -10,9 +10,9 @@ public class DecimalToBinary {
 
     private int startValue;
 
-    public String calculate(Integer decimal) {
+    public String calculate(String decimal) {
         ArrayList<Integer> binaryList = new ArrayList<>();
-        int startValue = decimal;
+        int startValue = Integer.parseInt(decimal);
         int roundErgebnis = -1;
         while(roundErgebnis != 0){
             System.out.println("rE: "+roundErgebnis);
@@ -31,7 +31,6 @@ public class DecimalToBinary {
                 //ist ungerade
                 binaryList.add(1);
                 System.out.println(startValue+" : 2 = "+ roundErgebnis+" Rest: 1");
-
             }
             startValue = roundErgebnis;
         }

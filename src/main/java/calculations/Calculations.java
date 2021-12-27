@@ -1,10 +1,10 @@
 package calculations;
 
 public interface Calculations {
-    String decimalToBinary(Integer decimal);
+    String decimalToBinary(String decimal);
     String ipDecimalToBinary(String ip);
-    void binaryToDecimal();
-    void decimalToHexadecimal();
+    String binaryToDecimal(String binary);
+    String decimalToHexadecimal(String decimal);
     void hexadecimalToDecimal();
     void binaryToHexadecimal();
     void hexadecimalToBinary();

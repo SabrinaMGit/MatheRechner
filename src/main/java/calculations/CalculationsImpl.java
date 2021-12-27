@@ -3,7 +3,7 @@ package calculations;
 public class CalculationsImpl implements Calculations{
 
     @Override
-    public String decimalToBinary(Integer decimal) {
+    public String decimalToBinary(String decimal) {
         DecimalToBinary decimalToBinary = new DecimalToBinary();
         return decimalToBinary.calculate(decimal);
     }
@@ -15,13 +15,15 @@ public class CalculationsImpl implements Calculations{
     }
 
     @Override
-    public void binaryToDecimal() {
-
+    public String binaryToDecimal(String binary) {
+        BinaryToDecimal binaryToDecimal = new BinaryToDecimal();
+        return binaryToDecimal.calculate(binary);
     }
 
     @Override
-    public void decimalToHexadecimal() {
-
+    public String decimalToHexadecimal(String decimal) {
+        DecimalToHexa decimalToHexa = new DecimalToHexa();
+        return decimalToHexa.calculate(decimal);
     }
 
     @Override
